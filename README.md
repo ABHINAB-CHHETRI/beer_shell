@@ -1,5 +1,5 @@
 
-# Beer Shell <img src="logo.png" alt="Beer Shell Logo" width="40"/>
+# Beer Shell
 
 <table>
   <tr>
