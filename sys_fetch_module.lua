@@ -3,7 +3,7 @@ local M = {}   -- make a table that will hold your module's functions
 --read("*l") reads first line , *a reads all 
 
 -- ANSI color codes
-local YELLOW = "\27[33m"
+local BLUE = "\27[34m"
 local RESET = "\27[0m"
 
 function M.sysfetch()
@@ -11,6 +11,6 @@ function M.sysfetch()
     local hostname = io.popen("hostname"):read("*l") or "Unknown"
     local uptime = io.popen("uptime -p"):read("*l") or "Unknown"
 
-    io.write(YELLOW .."Operating System:", os_name, "\nHostname:", hostname, "\nUptime:", uptime.. RESET) 
+    io.write(BLUE .."Operating System:", os_name, "\nHostname:", hostname, "\nUptime:", uptime.. RESET) 
 end
 return M  -- return the table so other files can use it
