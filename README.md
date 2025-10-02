@@ -1,10 +1,10 @@
 
-# Beer Shell
+# Beer Shell [1.0.0]
 
 <table>
   <tr>
     <td><img src="logo.png" alt="Beer Shell Logo" width="250"></td>
-    <td>A cool, user-friendly, and easy-to-use shell with niche features for Linux systems. Written entirely in Lua with zero dependencies, Beer Shell is a lightweight and fun alternative for your command line.</td>
+    <td>A cool, user-friendly, and easy-to-use shell with niche features for Linux systems. Written entirely in Lua with zero dependencies, Beer Shell is a lightweight and fun alternative for your command line. (for now it is under development and has mminimal functionality. </td>
   </tr>
 </table>
 
