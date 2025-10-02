@@ -30,8 +30,6 @@ Here's a look at Beer Shell running in a terminal.
 
 ---
 
-## 🚀 Getting Started
-
 ### Prerequisites
 
 Before you begin, ensure you have Lua installed on your system.
