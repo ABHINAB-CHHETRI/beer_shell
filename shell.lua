@@ -1,14 +1,21 @@
 --importing
 local sys_module_var= require("sys_fetch_module")  -- import mymodule.lua
 
+--info
+local version="1.0.0"
+local cwd=io.popen("pwd"):read("*l")
+
+
 local flag = true
 -- ANSI color codes
 local RED = "\027[31m"
+local YELLOW = "\027[33m"
 local RESET = "\027[0m"
 
 while flag == true do 
     ::reset::
-    io.write(RED .. "\n Beer Shell $ ".. RESET)
+    io.write(YELLOW .."\n Working Directory : "..cwd.." ~")
+    io.write(RED .. "\nBeer Shell $ ".. RESET)
 
     --reading user input 
     local raw_input = io.read()
@@ -35,7 +42,7 @@ while flag == true do
     local arg2= inputs[3]
 
     --executing commands
-    --one ard command
+    --zero arg command
     if command_length==1 then
         if command == "exit" then 
             goto shell_end
@@ -44,14 +51,26 @@ while flag == true do
         elseif command=="sysfetch" then
             sys_module_var.sysfetch()
         elseif command=="clc" then
-            os.execute("clear")  
-        end
-    elseif command_length==2 then
-        if command == "echo" then 
-            io.write(arg1)
-        end
-    else 
+            os.execute("clear")
+        else
         io.write(command .. " <- command not found")
+        end
+    --one arg command
+    elseif command_length==2 then
+        if command == "beershell" and arg1=="info" then
+            io.write("Beer Shell : ".. version.."\n")
+            io.write("Made by Abhinab B. Chhetri")
+        elseif command == "beershell" and arg1=="version" then
+            io.write("Beer Shell : ".. version)
+        elseif command == "file" then
+            if arg1=="list" then 
+                os.execute("ls -l")
+            end
+        elseif command == "echo" then 
+            io.write(arg1)
+        else
+            io.write(raw_input.. " <- command not found")
+        end
     end
 end
 ::shell_end:: --label/named point in code
