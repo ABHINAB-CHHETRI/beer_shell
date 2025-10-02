@@ -15,7 +15,4 @@ function M.beer_commands(command,arg1)
         io.write(MAGENTA ..command.." "..arg1.." ".."<-command not found"..RESET);
     end
 end
-::shell_end:: --label/named point in code
-io.write("\n Exiting Beer Shell. Thank you for using!!!\n")
-os.execute("sleep " .. 0)--3 sec wait //no wait fro now
 return M  -- return the table so other files can use it

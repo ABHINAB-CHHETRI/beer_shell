@@ -1,6 +1,8 @@
 local M = {}   -- make a table that will hold your module's functions
 --popen (pipeopen) allows to execute external system commands
 --read("*l") reads first line , *a reads all 
+local MAGENTA = "\027[35m" 
+local RESET = "\027[0m"
 local sys_module_var= require("sys_fetch_module")
 
 function M.basic_commands(command)
@@ -10,8 +12,8 @@ function M.basic_commands(command)
             sys_module_var.sysfetch()
         elseif command=="clc" then
             os.execute("clear")
-        else
-        io.write(command .. " <- command not found")
+        else 
+            io.write(MAGENTA..command.." ".."<-command not found"..RESET);
         end
 end
 return M  -- return the table so other files can use it
